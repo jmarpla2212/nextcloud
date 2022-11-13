@@ -12,6 +12,11 @@ services:
       - /containers/cloud/nextcloud/apps:/var/www/html/apps
       - /containers/cloud/nextcloud/config:/var/www/html/config
       - /containers/cloud/nextcloud/data:/var/www/html/data
+    environment:
+      - MYSQL_PASSWORD=
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
     depends_on:
       - db
 
